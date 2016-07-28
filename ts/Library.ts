@@ -32,7 +32,7 @@ module ImprovedInitiative {
 
         constructor() {
             Store.List(Store.SavedEncounters).forEach(e => this.SavedEncounterIndex.push(e));
-            
+
             Store.List(Store.PlayerCharacters).forEach(id => {
                 var statBlock = Store.Load<IStatBlock>(Store.PlayerCharacters, id);
                 this.Players.push(new CreatureListing(id, statBlock.Name, statBlock.Type, null, "localStorage", statBlock));
@@ -73,7 +73,7 @@ module ImprovedInitiative {
             var library = this.DisplayTab() == 'Players'
                 ? ko.unwrap(this.Players)
                 : ko.unwrap(this.Creatures);
-                 
+
             if (filter.length == 0) {
                 return library;
             }
@@ -106,6 +106,6 @@ module ImprovedInitiative {
                     this.Players.push(new CreatureListing(index.toString(), statBlock.Name, statBlock.Type, null, "localStorage", statBlock));
                 })
             });
-        } 
+        }
     }
 }
