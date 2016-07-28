@@ -21,7 +21,7 @@ module ImprovedInitiative {
             }
             return output + ` = ${this.Total}`;
         }
-    }    
+    }
 
     export class DefaultRules implements IRules {
         Modifier = (attribute: number) => {
@@ -42,7 +42,7 @@ module ImprovedInitiative {
 
             var howMany = (typeof match[1] == 'undefined') ? 1 : parseInt(match[1]);
             var dieSize = parseInt(match[2]);
-            
+
             var rolls = [];
             for (var i = 0; i < howMany; i++) {
                 rolls[i] = Math.ceil(Math.random() * dieSize);

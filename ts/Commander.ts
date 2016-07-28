@@ -57,7 +57,7 @@ module ImprovedInitiative {
                 this.library.Creatures.unshift(listing);
             }
         }
-        
+
         CreateAndEditCreature = (library: string) => {
             var statBlock = StatBlock.Empty();
             if (library == "Players") {
@@ -71,7 +71,7 @@ module ImprovedInitiative {
                 this.statBlockEditor.EditCreature(newId, statBlock, this.saveNewCreature, () => { });
             }
         }
-        
+
         private duplicateAndEditCreature = (listing: CreatureListing) => {
             var statBlock = listing.StatBlock();
             if (statBlock.Player == "player") {
@@ -82,7 +82,7 @@ module ImprovedInitiative {
                 this.statBlockEditor.EditCreature(newId, statBlock, this.saveNewCreature, () => { });
             }
         }
-        
+
         EditCreature = (listing: CreatureListing) => {
             if (listing.Source == "server") {
                 listing.LoadStatBlock(this.duplicateAndEditCreature);
@@ -119,7 +119,7 @@ module ImprovedInitiative {
             var creaturesToRemove = this.SelectedCreatures.removeAll(),
                 indexOfFirstCreatureToRemove = this.encounter().Creatures.indexOf(creaturesToRemove[0]),
                 deletedCreatureNames = creaturesToRemove.map(c => c.StatBlock().Name);
-            
+
             if (this.encounter().Creatures().length > creaturesToRemove.length) {
                 while (creaturesToRemove.indexOf(this.encounter().ActiveCreature()) > -1) {
                     this.encounter().NextTurn();
@@ -230,7 +230,7 @@ module ImprovedInitiative {
         ShowingLibraries = ko.observable(true);
         ShowLibraries = () => this.ShowingLibraries(true);
         HideLibraries = () => this.ShowingLibraries(false);
-        
+
         LaunchPlayerWindow = () => {
             window.open(`/p/${this.encounter().EncounterId}`, 'Player View');
         }

@@ -15,7 +15,7 @@ module ImprovedInitiative {
         }
     }
   }
-  
+
   export var BuildCommandList: (c: Commander) => Command [] = c => [
         new Command('Roll Initiative', c.RollInitiative, 'alt+r', 'fa-play'),
         new Command('Open Creature Library', c.ShowLibraries, 'alt+a', 'fa-user-plus'),

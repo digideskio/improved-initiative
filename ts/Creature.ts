@@ -24,7 +24,7 @@ module ImprovedInitiative {
 
         constructor(creatureJson, public Encounter: Encounter, savedCreature?: ISavedCreature) {
             var statBlock: IStatBlock = jQuery.extend(StatBlock.Empty(), creatureJson);
-            
+
             if (savedCreature) {
                 statBlock.HP.Value = savedCreature.MaxHP || savedCreature.Statblock.HP.Value;
                 this.Id = savedCreature.Id || Creature.nextId++;
@@ -48,7 +48,7 @@ module ImprovedInitiative {
                 this.processSavedCreature(savedCreature);
             }
         }
-        
+
         Id = 0;
         Alias = ko.observable(null);
         TemporaryHP = ko.observable(0);
@@ -96,7 +96,7 @@ module ImprovedInitiative {
                 }
             }
             return HP.Value;
-        }        
+        }
 
         private setIndexLabel(oldName?: string) {
             var name = this.StatBlock().Name,

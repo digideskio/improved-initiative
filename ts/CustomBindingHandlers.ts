@@ -126,7 +126,6 @@ module ImprovedInitiative {
             // and again whenever any observables/computeds that are accessed change
             // Update the DOM element based on the supplied values here.
             //if (bindingContext.$data.update) bindingContext.$data.update(element, valueAccessor, allBindings, viewModel, bindingContext);
-      
         }
     }
 }
