@@ -54,6 +54,7 @@ module ImprovedInitiative {
         Challenge: string;
         Traits: NameAndContent[];
         Actions: NameAndContent[];
+        Reactions: NameAndContent[];
         LegendaryActions: NameAndContent[];
         Player: string;
     }
@@ -70,6 +71,7 @@ module ImprovedInitiative {
                 Challenge: '',
                 Traits: [],
                 Actions: [],
+                Reactions: [],
                 LegendaryActions: [],
                 Player: ''
             };
@@ -85,6 +87,7 @@ module ImprovedInitiative {
             Abilities: statBlock.Abilities,
             AC: statBlock.AC,
             Actions: [],
+            Reactions: [],
             Challenge: statBlock.Challenge,
             ConditionImmunities: [],
             DamageImmunities: [],
