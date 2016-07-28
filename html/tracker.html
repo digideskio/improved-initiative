@@ -70,12 +70,12 @@
         <div class="active-creature" data-bind="if: Encounter().ActiveCreature()">
             <h2>Active Creature</h2>
             <div class="statblock" data-bind="
-                visible: Encounter().ActiveCreature(), 
-                component: { 
-                    name: 'activestatblock', 
-                    params: { 
-                    creature: Encounter().ActiveCreatureStatblock() 
-                    } 
+                visible: Encounter().ActiveCreature(),
+                component: {
+                    name: 'activestatblock',
+                    params: {
+                    creature: Encounter().ActiveCreatureStatblock()
+                    }
                 }">
             </div>
         </div>
@@ -105,7 +105,7 @@
                         </li>
                         <!-- ko foreach: Creatures -->
                         <li class="creature" data-bind="
-                            css: { selected: $root.Commander.SelectedCreatures().indexOf($data) > -1, 
+                            css: { selected: $root.Commander.SelectedCreatures().indexOf($data) > -1,
                                     active: $parent.ActiveCreature() == $data },
                             click: $root.Commander.SelectCreature,
                             component: {
@@ -129,12 +129,12 @@
     <div class="right-column">
         <div class="target-creature">
             <h2>Target Creature</h2>
-            <div class="statblock" data-bind="visible: Commander.SelectedCreatures().length == 1, 
-                component: { 
-                name: 'defaultstatblock', 
-                params:{ 
+            <div class="statblock" data-bind="visible: Commander.SelectedCreatures().length == 1,
+                component: {
+                name: 'defaultstatblock',
+                params:{
                     creature: Commander.SelectedCreatureStatblock(),
-                } 
+                }
                 }">
             </div>
         </div>

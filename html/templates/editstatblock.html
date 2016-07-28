@@ -1,6 +1,6 @@
 <h2>Edit Creature</h2>
 <div class="editor-type">
-    Editor: 
+    Editor:
     <label>
         <input type="radio" name="editor-type" value="basic" data-bind="checked: EditorType" />Form</label>
     <label>
@@ -8,18 +8,18 @@
 </div>
 <!-- ko if: EditorType() == 'basic' -->
 <div class="stats" data-bind="with: EditableStatBlock">
-    <div><label>Name 
+    <div><label>Name
         <input class="name" type="text" data-bind="value: Name" />
     </label></div>
-    <div><label>Type 
+    <div><label>Type
         <input class="type" type="text" data-bind="value: Type" />
     </label></div>
     <div>
-        <label>HP 
+        <label>HP
             <input type="number" data-bind="value: HP.Value" />
             <input type="text" data-bind="value: HP.Notes" />
         </label>
-        <label>AC 
+        <label>AC
             <input type="number" data-bind="value: AC.Value" />
             <input type="text" data-bind="value: AC.Notes" />
         </label>

@@ -21,8 +21,8 @@
             </li>
             <!-- ko foreach: Creatures -->
             <li class="creature" data-bind="
-            css: { active: $parent.ActiveCreature() == $data, 
-                   playercharacter: $data.IsPlayerCharacter }, 
+            css: { active: $parent.ActiveCreature() == $data,
+                   playercharacter: $data.IsPlayerCharacter },
             component: {
               name: 'playerdisplaycombatant',
               params: { creature: $data }
