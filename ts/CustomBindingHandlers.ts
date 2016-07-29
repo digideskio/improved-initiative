@@ -106,17 +106,16 @@ module ImprovedInitiative {
 
             $(element).on('mouseover', event => {
                 var hoveredElementData = ko.dataFor(event.target);
-                params.data(hoveredElementData);
-                var target = $(event.target);
-                var top = target.position().top;
-                var left = target.position().left + target.width();
-                var maxPopPosition = $(document).height() - popComponent.height();
-                if (top > maxPopPosition) {
-                    top = maxPopPosition;
-                }
-                popComponent.css('left', left);
-                popComponent.css('top', top).select();
-            })
+                params.data(hoveredElementData, () => {
+                    var target = $(event.target);
+                    var top = target.position().top;
+                    var left = target.position().left + target.width();
+                    var maxPopPosition = Math.max(0, $(document).height() - popComponent.outerHeight(true));
+		    top = Math.min(top, maxPopPosition);
+                    popComponent.css('left', left);
+                    popComponent.css('top', top).select();
+                });
+            });
 
             popComponent.add(element).hover(() => { popComponent.show() },
                 () => { popComponent.hide() });

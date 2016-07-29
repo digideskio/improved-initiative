@@ -56,10 +56,11 @@ module ImprovedInitiative {
             return this.previewStatBlock() || StatBlock.Empty();
         })
 
-        PreviewCreature = (creature: CreatureListing) => {
+        PreviewCreature = (creature: CreatureListing, callback : () => any) => {
             this.previewStatBlock(null);
             creature.LoadStatBlock(listing => {
                 this.previewStatBlock(listing.StatBlock());
+                callback();
             });
         }
 
