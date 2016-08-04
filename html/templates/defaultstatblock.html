@@ -36,10 +36,12 @@
 <div class="modifiers" data-bind="foreach: ['Saves', 'Skills']">
     <div data-bind="visible: $parent[$data].length, css: $data">
         <span class="label" data-bind="text: $data"></span>
-        <!-- ko foreach: $parent[$data] -->
-        <span data-bind="text:Name"></span>
-        <span class="csv" data-bind="text: (Modifier >= 0?'+':'-') + Modifier"></span>
-        <!-- /ko -->
+        <span class="container">
+          <!-- ko foreach: $parent[$data] -->
+          <span data-bind="text:Name"></span>
+          <span class="csv" data-bind="text: (Modifier >= 0?'+':'-') + Modifier"></span>
+          <!-- /ko -->
+        </span>
     </div>
 </div>
 
