@@ -13,6 +13,7 @@ module ImprovedInitiative {
         }
 
         Add = (poll: IUserPoll) => {
+            this.queue.removeAll();
             this.queue.push(poll);
         }
 
